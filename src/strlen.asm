@@ -3,14 +3,17 @@
 	section .text
 
 strlen:
-	xor rax, rax
+	push rcx
+	xor rcx, rcx
 
-count:
-	cmp BYTE [rdi], 0
-	je end
+incre:
+ 	cmp BYTE [rdi], byte 0
+	je return
+	inc rcx
 	inc rdi
-	inc rax
-	jmp count
+	jmp incre
 
-end:
+return:
+	mov rax, rcx
+	pop rcx
 	ret
