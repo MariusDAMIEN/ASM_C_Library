@@ -7,14 +7,15 @@ strchr:
 	xor rcx, rcx
 
 incre:
- 	cmp BYTE [rdi + rcx], byte 0
+	add rdi, rcx
+ 	cmp BYTE [rdi], byte 0
 	je return
-	cmp sil, [rdi, rcx]
+	cmp sil, BYTE [rdi]
+	je return
 	inc rcx
 	jmp incre
 
 return:
 	mov rax, rdi
-	add rax, rcx
 	pop rcx
 	ret

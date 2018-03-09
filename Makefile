@@ -15,7 +15,9 @@ RM		= rm -f
 
 NAME		= libasm.so
 
-SRCS		= src/strlen.asm		\
+SRCS		= src/strlen.asm	\
+		src/strchr.asm		\
+		src/memset.asm
 
 OBJS		= $(SRCS:.asm=.o)
 
