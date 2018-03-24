@@ -21,6 +21,7 @@ SRCS		= src/strlen.asm	\
 		src/memcpy.asm		\
 		src/strcmp.asm		\
 		src/strncmp.asm		\
+		src/strcasecmp.asm		\
 
 OBJS		= $(SRCS:.asm=.o)
 
