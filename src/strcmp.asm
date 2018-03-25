@@ -8,12 +8,12 @@ strcmp:
 	xor rcx, rcx
 	
 loop:
+	mov r8b, byte [rdi]
+	mov r9b, byte [rsi]
 	cmp byte [rdi], byte 0
 	je return
 	cmp byte [rsi], byte 0
 	je return
-	mov r8b, byte [rdi]
-	mov r9b, byte [rsi]
 	cmp r8b, r9b
 	jnz return
 	inc rdi
